@@ -9,7 +9,9 @@ import { Router } from '@angular/router';
 export class ModuleComponent implements OnInit {
 
    //properties
-   private sitemaps: any;
+   private sitemaps: Array<any>;
+   private selectModule: string;
+   private route: string;
    public moduleSitemaps: any;
  
    //cosntructo
@@ -36,11 +38,11 @@ export class ModuleComponent implements OnInit {
    }
  
    //methods
-   public redirect() {
+    public redirect(menu: any) {
  
-       
+       debugger
        /*let result = this.sitemapService.get(sitemap.id);
-       result.subscribe(
+        result.subscribe(
            (response) => {
  
                if (response.success) {
@@ -53,11 +55,123 @@ export class ModuleComponent implements OnInit {
            (error) => {
                toastr.error("Error: " + error)
            },
-       );*/
+        );*/
+        this.sitemaps = [];        
+        switch(menu)
+        {
+            case 1:
+                this.sitemaps = [
+                    {name: 'Productos', homePage: 'products', menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Clientes', homePage: 'customer', menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Proveedores', homePage: 'provider', menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Ventas', homePage: 'sale', menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Compras', homePage: 'purchase', menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    }
+                ];
+                this.selectModule = 'Facturación';
+                this.route = 'billing-main';
+            break;
+            case 2:
+                this.sitemaps = [
+                    {name: 'Plan Cuentas', homePage: 'products',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Libro Diario', homePage: 'customer',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Estados Financieros', homePage: 'provider',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Configuración', homePage: 'sale',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    }
+                ];
+                this.selectModule = 'Contabilidad';
+                this.route = 'accounting-main';
+            break;
+            case 3:
+                this.sitemaps = [
+                    {name: 'Bodega', homePage: 'products',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Reportes', homePage: 'customer',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Configuración', homePage: 'sale',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    }
+                ];
+                this.selectModule = 'Contabilidad';
+                this.route = 'inventory-main';
+            break;
+            case 4:
+                this.sitemaps = [];
+                this.selectModule = 'Configuraciones';
+                this.route = 'configuration-main';
+            break;
+            case 5:
+                this.sitemaps = [
+                    {name: 'Usuarios', homePage: 'user',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Roles', homePage: 'roles',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    },
+                    {name: 'Permisos', homePage: 'sale',menu :[
+                        {name: 'Opcion 1' ,  route:'#'},
+                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Opcion 3' ,  route:'#'}]
+                    }
+                ];
+                this.selectModule = 'Usuarios';
+                this.route = 'users-main';
+            break;
+            default:
+            break;
+        }
+        sessionStorage.setItem('sitemap', JSON.stringify(this.sitemaps));
+        sessionStorage.setItem('selectedModule', this.selectModule )   ;
+        sessionStorage.setItem("isMenuOpen", "false"); 
+        this.router.navigate([this.route]);
  
- 
- 
-   }
+    }
  
    public back(): void {
        window.history.back();

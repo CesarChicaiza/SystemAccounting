@@ -1,0 +1,7 @@
+.dropdown-menu {
+    background: rgb(115, 206, 218);
+}
+
+.dropdown-menu>li>a {
+    font-size: 12px;
+}

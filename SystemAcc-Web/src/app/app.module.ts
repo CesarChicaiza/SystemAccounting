@@ -15,6 +15,10 @@ import { BillingMainComponent } from './core/billing/billing-main/billing-main.c
 import { CreateCustomerComponent } from './core/billing/customer/create-customer/create-customer.component';
 import { EditCustomerComponent } from './core/billing/customer/edit-customer/edit-customer.component';
 import { ListCustomerComponent } from './core/billing/customer/list-customer/list-customer.component';
+import { InventoryMainComponent } from './core/inventory/inventory-main/inventory-main.component';
+import { ConfigurationMainComponent } from './core/configuration/configuration-main/configuration-main.component';
+import { UsersMainComponent } from './core/users/users-main/users-main.component';
+import { AccountingMainComponent } from './core/accounting/accounting-main/accounting-main.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { ListCustomerComponent } from './core/billing/customer/list-customer/lis
     BillingMainComponent,
     CreateCustomerComponent,
     EditCustomerComponent,
-    ListCustomerComponent
+    ListCustomerComponent,
+    InventoryMainComponent,
+    ConfigurationMainComponent,
+    UsersMainComponent,
+    AccountingMainComponent
   ],
   imports: [
     BrowserModule,
