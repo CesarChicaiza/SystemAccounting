@@ -7,6 +7,7 @@ import { BillingMainComponent } from './core/billing/billing-main/billing-main.c
 import { AccountingMainComponent } from './core/accounting/accounting-main/accounting-main.component';
 import { InventoryMainComponent } from './core/inventory/inventory-main/inventory-main.component';
 import { UsersMainComponent } from './core/users/users-main/users-main.component';
+import { CreateCustomerComponent } from './core/billing/customer/create-customer/create-customer.component';
 
 
 
@@ -38,6 +39,11 @@ const routes: Routes = [
   {
     path:'users-main',
     component: UsersMainComponent
+  },
+  //Customer
+  {
+    path:'create-customer',
+    component: CreateCustomerComponent
   }
 ];
 

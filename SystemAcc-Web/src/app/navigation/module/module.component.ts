@@ -67,8 +67,8 @@ export class ModuleComponent implements OnInit {
                         {name: 'Opcion 3' ,  route:'#'}]
                     },
                     {name: 'Clientes', homePage: 'customer', menu :[
-                        {name: 'Opcion 1' ,  route:'#'},
-                        {name: 'Opcion 2' ,  route:'#'},
+                        {name: 'Nuevo' ,  route:'/create-customer'},
+                        {name: 'Ver Todos' ,  route:'#'},
                         {name: 'Opcion 3' ,  route:'#'}]
                     },
                     {name: 'Proveedores', homePage: 'provider', menu :[

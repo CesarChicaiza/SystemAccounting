@@ -1,3 +1,102 @@
-<p>
-  create-customer works!
-</p>
+<app-menu></app-menu>
+
+<div class="page-subnav">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <div class="page-title">Crear Cliente</div>
+      </div>
+      <div class="col-md-3" style="text-align:right">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default btn-sm" (click)="cancel()">Descartar</button>
+            <button type="button" class="btn btn-success btn-sm" [disabled]="!formGroup.valid || submitting" (click)="onSubmit()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="container">
+    <!--box-->
+    <div class="work-place">
+      <br>
+      <form [formGroup]="formGroup">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+                <label class="control-label col-md-3">Tipo Documento<span class="errorMessage" [hidden]="validate('TypeDocument')">*</span></label>
+                <div class="col-md-9">
+                  <input type="text" [formControlName]="'TypeDocument'" class="form-control input-sm">
+                </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Documento<span class="errorMessage" [hidden]="validate('Document')">*</span></label>
+              <div class="col-md-9">
+                <input type="text" [formControlName]="'Document'" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Nombre / R. Social<span class="errorMessage" [hidden]="validate('Name')">*</span></label>
+              <div class="col-md-9">
+                <input type="text" [formControlName]="'Name'" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Dirección<span class="errorMessage" [hidden]="validate('Address')">*</span></label>
+              <div class="col-md-9">
+                <input type="text" [formControlName]="'Address'" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Teléfono<span class="errorMessage" [hidden]="validate('PhoneHome')">*</span></label>
+              <div class="col-md-9">
+                <input type="text" [formControlName]="'PhoneHome'" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Móvil<span class="errorMessage" [hidden]="validate('Movil')">*</span></label>
+              <div class="col-md-9">
+                <input type="text" [formControlName]="'Movil'" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Email<span class="errorMessage" [hidden]="validate('Email')">*</span></label>
+              <div class="col-md-9">
+                <input type="email" [formControlName]="'Email'" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Ciudad<span class="errorMessage" [hidden]="validate('City')">*</span></label>
+              <div class="col-md-9">
+                <input type="text" [formControlName]="'City'" class="form-control input-sm">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class="control-label col-md-3">Proveedor<span class="errorMessage" [hidden]="validate('Supplier')">*</span></label>
+              <div class="col-md-9">
+                <input type="checkbox" [formControlName]="'Supplier'" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
